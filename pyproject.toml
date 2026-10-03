@@ -1,0 +1,35 @@
+[project]
+name = "personal-finance-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "pedro", email = "pedrortiz89@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+    "langchain>=1.4.2",
+    "langchain-anthropic>=1.7.4",
+    "langchain-openai>=1.6.6",
+    "langgraph>=1.2.12",
+]
+
+[project.scripts]
+personal-finance-agent = "personal_finance_agent:main"
+
+[build-system]
+requires = ["uv_build>=0.12.0,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "grandalf>=0.8",
+    "graphviz>=0.21",
+    "ipykernel>=7.3.0",
+    "langgraph-cli[inmem]>=0.4.32",
+    "pydot>=4.0.1",
+]
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["*"]
